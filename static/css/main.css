@@ -1,0 +1,249 @@
+/* Main app styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --light-gray: #f8f9fa;
+  --dark-gray: #343a40;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: var(--dark-gray);
+}
+
+.container-fluid {
+  max-width: 1400px;
+}
+
+.app-header {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  border: none;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-bottom: none;
+}
+
+/* Video feed and camera placeholder */
+.camera-container {
+  position: relative;
+  aspect-ratio: 4/3;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#video-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#camera-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #aaa;
+  background-color: #222;
+}
+
+.camera-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Controls */
+.controls {
+  margin-top: 1rem;
+}
+
+.btn-control {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Face registration form */
+.registration-form {
+  margin-top: 1rem;
+}
+
+#face-name {
+  margin-bottom: 1rem;
+}
+
+/* Registered faces */
+.faces-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.face-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.face-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.face-image {
+  height: 120px;
+  overflow: hidden;
+}
+
+.face-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.face-info {
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.face-info h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status indicators */
+.status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.status-on {
+  background-color: var(--success-color);
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+}
+
+.modal-header {
+  background-color: var(--secondary-color);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.preview-image-container {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.preview-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faces-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .face-image {
+    height: 100px;
+  }
+  
+  .face-info h5 {
+    font-size: 0.8rem;
+  }
+  
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Canvas for processing (hidden) */
+#process-canvas {
+  display: none;
+}
+
+/* File input (hidden) */
+#upload-input {
+  display: none;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background-color: var(--light-gray);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+} 
